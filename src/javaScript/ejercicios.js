@@ -252,58 +252,162 @@ $form8.addEventListener('submit', (e) => {
 
 
  // 9. Pedir un número, mostrar el cuadrado de n.
- /* function elcuadrado() {
-    const numero = parseInt(prompt('Ingresa un numero'));
-    alert(`el cuadrado de ${numero} es ${numero * numero}`)
+
+ const $form9 = document.getElementById('form9');
+ const alertPlaceholder9 = document.getElementById('liveAlertPlaceholder9');
+ 
+ $form9.addEventListener('submit', (e) => {
+e.preventDefault();
+elcuadrado();
+ });
+
+ function elcuadrado() {
+    const nmr9 = parseInt($form9.cuadradonmr.value);
+    alert9(`el cuadrado de ${nmr9} Es ${nmr9 * nmr9}`, 'success')
   }
-  elcuadrado();*/
+  
+
+  const alert9 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder9.append(wrapper)
+
+};
 
 //10. Pedir un número, mostrar n reducido en 5.
 
- /*function reducidoDeCinco() {
-    let reducido = parseInt(prompt('Ingresa un numero'));
-    alert(`el numero ${reducido} reducido en 5 es ${reducido - 5}`)
+const $form10 = document.getElementById('form10');
+const alertPlaceholder10 = document.getElementById('liveAlertPlaceholder10')
+
+$form10.addEventListener('submit', (e) => {
+    e.preventDefault();
+    reducidoDeCinco();
+
+});
+
+function reducidoDeCinco() {
+    let nmr10 = parseInt($form10.reducidonmr.value);
+    alert10(`el numero ${nmr10} reducido en 5 es ${nmr10 - 5}`, 'info')
  }
-  reducidoDeCinco();*/
 
-//11.  Pedir un número, mostrar el doble de n más 4.
+ const alert10 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder10.append(wrapper)
 
-/*function dobleDeMasCuatro() {
-    let numero = parseInt(prompt('Ingrese un numero'));
-    let resultado = numero * 2 + 4;
-    alert(`el doble de ${numero}, mas 4 es ${resultado}`);
+};
+
+  
+//11. Pedir un número, mostrar el doble de n más 4.
+const $form11 = document.getElementById('form11');
+const alertPlaceholder11 =document.getElementById('liveAlertPlaceholder11')
+
+$form11.addEventListener('submit', (e) => {
+    e.preventDefault();
+    dobleDeMasCuatro();
+
+});
+function dobleDeMasCuatro() {
+    const nmr11 = parseInt($form11.doblen.value);
+    const r11 = nmr11 * 2 + 4;
+    alert11(`el doble de ${nmr11}, mas 4 es ${r11}`);
     
 }
- dobleDeMasCuatro();*/
+ 
+ const alert11 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder11.append(wrapper)
+
+};
 
 
 // 12. Pedir un número, mostrar si es positivo, negativo o si es cero.
 
-/*function positivoNegativoCero() {
-    const numero = parseInt(prompt('Ingrese un numero'));
-    if (numero === 0) {
-        alert('Ingreso un cero');
-    }else if (numero < 0){
-        alert('Ingreso un numero negativo');
+const $form12 = document.getElementById('form12');
+const alertPlaceholder12 = document.getElementById('liveAlertPlaceholder12');
+
+$form12.addEventListener('submit', (e) => {
+    e.preventDefault();
+    positivoNegativoCero();
+
+});
+
+function positivoNegativoCero() {
+    const nmr12 = parseInt($form12.nmrpositivonegativo.value);
+    if (nmr12 === 0) {
+        alert12('Ingreso un cero');
+    }else if (nmr12 < 0){
+        alert12('Ingreso un numero negativo');
     }else {
-        alert('Ingreso un numero positivo');
+        alert12('Ingreso un numero positivo');
     }
 }
-positivoNegativoCero();*/
+const alert12 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder12.append(wrapper)
+
+};
 
 // 13 . Pedir un número, mostrar si es par, impar o si es cero.
- /* function ceroParImpar() {
-    const numero = parseInt(prompt('Ingresa un numero'));
-    if (numero === 0) {
-        alert('numero' + numero + 'es cero')
-    }else if (numero % 2 === 0) {
-        alert('el numero' + numero + 'es un numero par');
+const $form13 = document.getElementById('form13');
+const alertPlaceholder13 = document.getElementById('liveAlertPlaceholder13');
+
+$form13.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    ceroParImpar();
+
+})
+
+ function ceroParImpar() {
+    const nmr13 = parseInt($form13.parimpar.value);
+    if (nmr13 === 0) {
+        alert13('numero' + nmr13 + 'es cero')
+    }else if (nmr13 % 2 === 0) {
+        alert13('el numero'  +  nmr13 +  ' es un numero par');
     }else{
-        alert('el numero ' + numero + 'es un numero impar');
+        alert13('el numero ' + nmr13 +  ' es un numero impar');
     }
     
   }
-  ceroParImpar();*/
+  const alert13 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder13.append(wrapper)
+
+};
+  
 
 
 //14.  Pedir un número, mostrar si es un número primo o no.
