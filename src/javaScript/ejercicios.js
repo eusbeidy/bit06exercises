@@ -411,171 +411,425 @@ $form13.addEventListener('submit', (e) =>{
 
 
 //14.  Pedir un número, mostrar si es un número primo o no.
- /*function esPrimo() {
-    const numero = parseInt(prompt('Ingresa un numero mayor que 1'));
-    if (numero < 2) {
-        alert('error, debes ingresar un numero mayor que 1')
+
+const $form14 =document.getElementById('form14');
+const alertPlaceholder14 = document.getElementById('liveAlertPlaceholder14');
+
+$form14.addEventListener('submit', (e) => {
+    e.preventDefault();
+    esPrimo();
+
+})
+function esPrimo() {
+    const nmr14 = parseInt($form14.nmrprimo.value);
+    if (nmr14 < 2) {
+        alert14('error, debes ingresar un numero mayor que 1')
         return
     }
-    let contador = 0;
-    for (let i = 1; i <= numero; i++) {
-        if (numero % i === 0) {
+    const contador = 0;
+    for (let i = 1; i <= nmr14; i++) {
+        if (nmr14 % i === 0) {
             contador++;
         }
     }
     if (contador === 2) {
-        alert(`el numero ${numero} es primo`);
+        alert14(`el numero ${nmr14} es primo`);
     }else{
-        alert(`el numero ${numero}, no es primo`);
+        alert14(`el numero ${nmr14}, no es primo`);
     }
  }
- esPrimo();*/
-// 15. Pedir dos números, mostrar la suma.
-/*const sumaDeDosNumeros = ()=> {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    alert(` ${numero1} + ${numero2} = ${numero1 + numero2}`);
+ 
+ const alert14 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder14.append(wrapper)
+
+};
+// 15. Pedir dos números, mostrar la suma y la resta.
+const $form15 = document.getElementById('form15');
+const alertPlaceholder15 = document.getElementById('liveAlertPlaceholder15');
+
+$form15.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    sumaDeDosNumeros();
+
+
+})
+
+
+
+const sumaDeDosNumeros = ()=> {
+    const numero1 = parseInt($form15.numero15.value);
+    const numero2 = parseInt($form15.nmr15.value);
+    alert15(` ${numero1} + ${numero2} = ${numero1 + numero2}`, 'warning');
+    alert15(` ${numero1} - ${numero2} = ${numero1 - numero2}`, 'danger');
 }
-sumaDeDosNumeros();*/
-// 16. Pedir dos números, mostrar la resta.
 
-/*const restaDeDosNumeros = ()=> {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    alert(` ${numero1} - ${numero2} = ${numero1 - numero2}`);
+const alert15 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder15.append(wrapper)
+
+};
+
+//16.  Pedir dos números, mostrar la multiplicación.
+
+const $form16 = document.getElementById('form16');
+const alertPlaceholder16 = document.getElementById('liveAlertPlaceholder16');
+
+$form16.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    multiDivision();
+
+
+})
+
+
+
+const multiDivision = ()=> {
+    const numero16 = parseInt($form16.numero16.value);
+    const numero162 = parseInt($form16.nmr16.value);
+    alert16(`La Multiplicación de  ${numero16} * ${numero162} = ${numero16 * numero162}`, 'info');
+    alert16(`La División de ${numero16} / ${numero162} = ${numero16 / numero162}`, 'danger');
 }
-restaDeDosNumeros();*/
 
-//17.  Pedir dos números, mostrar la multiplicación.
+const alert16 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder16.append(wrapper)
 
-/*const multiplicacionDeDosNumeros = ()=> {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    alert(`${numero1} * ${numero2} = ${numero1 * numero2}`)
+};
+
+
+// 17. Pedir dos números, mostrar el resto de la división.
+
+const $form17 = document.getElementById('form17');
+const alertPlaceholder17 = document.getElementById('liveAlertPlaceholder17');
+
+$form17.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    elResto();
+
+
+})
+
+function elResto() {
+    const nmr17 = parseInt($form17.restoDivision1.value);
+    const nmrr17 = parseInt($form17.restoDivision2.value);
+    const r17 = nmr17 % nmrr17;
+    alert17(` El resto es ${r17 }`,'successs')
 }
-multiplicacionDeDosNumeros();*/
 
-// 18. Pedir dos números, mostrar la división.
 
-/*const divicionDeDosNumeros = ()=> {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    const resultado = numero1 / numero2
-    alert(`${numero1} / ${numero2} = ${resultado}`)
-}
-divicionDeDosNumeros();*/
+const alert17 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder17.append(wrapper)
 
-// 19. Pedir dos números, mostrar el resto de la división.
+};
 
-/*function elResto() {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    const resultado = numero1 % numero2;
-    alert(` El resto es ${resultado }`)
-}
-elResto();*/
 
-// 20. Pedir dos números, mostrar si el primer número es divisible por el segundo.
+// 18. Pedir dos números, mostrar si el primer número es divisible por el segundo.
 
-/*const divisible = () => {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    const resultado = numero1 % numero2;
-    if (numero1 === numero2) {
-        alert(`Si es divisible el Resultado es, ${numero1 / numero2}`);
+const $form18 = document.getElementById('form18');
+const alertPlaceholder18 = document.getElementById('liveAlertPlaceholder18');
+
+$form18.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    Divisible();
+
+
+})
+
+function Divisible() {
+    const nmr18 = parseInt($form18.Divisible1.value);
+    const nmrr18 = parseInt($form18.Divisible2.value);
+    const r17 = nmr18 % nmrr18;
+    if (nmr18 === nmr18) {
+        alert18(`Si es divisible el Resultado es, ${nmr18 / nmrr18}`);
     } else{
-        alert('no se encontraron resultados.')
+        alert18('no se encontraron resultados.')
     }
 }
-divisible();*/
 
-// 21. Pedir dos números y el nombre de una operación, mostrar el resultado.
 
-/*const resultado = () => {
-    const numero1 = parseInt(prompt('Ingresa el primer numero'));
-    const numero2 = parseInt(prompt('Ingresa el segundo numero'));
-    const nOperacion = prompt('Ingresa el nombre de una Operacion');
-    switch (nOperacion) {
-        case sumar:
-            alert(`${numero1} + ${numero2} = ${numero1 + numero2}`);
-            break;
+
+
+const alert18 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder18.append(wrapper)
+
+};
+
+
+// 19. Pedir dos números y el nombre de una operación, mostrar el resultado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+const $form19 = document.getElementById('form19');
+const alertPlaceholder19 = document.getElementById('liveAlertPlaceholder19');
+
+$form19.addEventListener('submit', (e) => {
+    e.preventDefault();
     
+    resultado();
+})
+const resultado = () => {
+    const numero19 = parseInt($form19.operacion1.value);
+    const numeroo19 = parseInt($form19.operacion2.value);
+    const nOperacion = ($form19.operacion3.value );
+    switch (nOperacion) {
+        case 'sumar':
+          alert19(`${numero19} + ${numeroo19} = ${numero19 + numeroo19}`);
+          break;
+        case 'restar':
+          alert19(`${numero19} - ${numeroo19} = ${numero19 - numeroo19}`);
+          break;
+        case 'multiplicar':
+          alert19(`${numero19} x ${numeroo19} = ${numero19 * numeroo19}`);
+          break;
+        case 'dividir':
+          alert19(`${numero19} / ${numeroo19} = ${numero19/ numeroo19}`);
+          break;
         default:
-            break;
+          alert19(`La operación "${nOperacion}" no existe en esta función.`);
+          break;
     }
           
 }
-resultado();
 
-
-// 22. Pedir un número, mostrar la suma total desde 1 hasta n.
+const alert19 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
   
-/*function SumaUnoN() {
-    let numero = parseInt(prompt('Ingresa un numero.'));
-for (let  i= 1;  i <= numero ; i++) {
-    if (i + numero) {
-        console.log(i)
-    }
-}
-}
-SumaUnoN();
+    alertPlaceholder19.append(wrapper)
 
-//23.  Pedir un número, mostrar la suma de los números pares desde 1 hasta n.
+};
+
+
+// 20. Pedir un número, mostrar la suma total desde 1 hasta n.
+  const $form20 =document.getElementById('form20');
+  const alertPlaceholder20 = document.getElementById('liveAlertPlaceholder20');
+
+  $form20.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      sumaTotal();
+  })
+  function sumaTotal() {
+    const numero20 = parseInt($form20.suma20.value);
+    let resultado20 = 0;
+  
+    let i = 1;
+    while (i <= numero20) {
+      resultado20 += i;
+      i++;
+    }
+  
+  
+    alert20('La suma total es: ' + resultado20);
+  }
+  
+  
+const alert20 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder20.append(wrapper)
+
+};
+
+//21.  Pedir un número, mostrar la suma de los números pares desde 1 hasta n.
+const $form21 =document.getElementById('form21');
+  const alertPlaceholder21 = document.getElementById('liveAlertPlaceholder21');
+
+  $form21.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      sumaPares();
+  })
+
 function sumaPares() {
-    const numero = parseInt(prompt('Ingresa un numero.'));
-    let resultado= 0;
-    for (let i = 1; i <= numero; i++) {
+    const numero21 = parseInt($form21.suma21.value);
+    let resultado21 = 0;
+    for (let i = 1; i <= numero21; i++) {
         if (i % 2 === 0) {
-            resultado = resultado + i;
+            resultado21 = resultado21 + i;
         }
 
     }
-    alert('la suma de los pares es' +  resultado);
+    alert21('la suma de los pares es '  +  resultado21);
 }
- sumaPares();
+const alert21 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder21.append(wrapper)
 
-//24.  Pedir un número, mostrar la suma de los números impares desde 1 hasta n.
-/*function sumaImpares() {
-    const numero = parseInt(prompt('Ingresa un numero.'));
-    let resultado = 0;
-    for (let i = 1; i <= numero; i++) {
-      if (i % 2 ===/ 0) {
-        resultado += i ;
+};
+
+//22.  Pedir un número, mostrar la suma de los números impares desde 1 hasta n.
+const $form22 =document.getElementById('form22');
+  const alertPlaceholder22 = document.getElementById('liveAlertPlaceholder22');
+
+  $form22.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      sumaImpares();
+  })
+
+
+function sumaImpares() {
+    const numero22= parseInt($form22.suma22.value);
+
+    let resultado22 = 0;
+  
+    for (let i = 1; i <= numero22; i++) {
+      if (i % 2 !== 0) {
+        resultado22 = resultado22 + i;
       }
     }
-    alert('la suma de los impares' + resultado);
-}
- sumaImpares();
-
-// 25. Pedir un número, mostrar multiplos de 3 desde 1 hasta n.
-function multiplos() {
-    const numero = parseInt(prompt('Ingresa un numero'));
-    let i = 0;
-    while (i =< numero) {
-        if (i % 3 === 0) {
-            
-        }
-        i++;
+  
+    alert22('La suma total de los impares es: ' + resultado22);
     }
-}
- multiplos();
 
-// 26. Pedir un número, mostrar los números desde n hasta 0.
 
-function numeros() {
-    const numero = parseInt(prompt('Ingresar un numero.'));
-    for (let i = numero; i >= 0 ; i--) {
-        console.log(i);
-        
+ const alert22 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder22.append(wrapper)
+
+};
+
+// 23. Pedir un número, mostrar multiplos de 3 desde 1 hasta n.
+ 
+const $form23 =document.getElementById('form23');
+  const alertPlaceholder23 = document.getElementById('liveAlertPlaceholder23');
+
+  $form23.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      multiplosDe3();
+  })
+function multiplosDe3() {
+    const numero23 = parseInt($form23.multiplos.value)
+  
+    let i = 1;
+    while (i <= numero23) {
+      if (i % 3 === 0) {
+      }
+      i++;
     }
-}
-numeros();*/
+    alert23(`${i}`)
+  }
+  const alert23 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder23.append(wrapper)
 
+};
+  
+  // 24.Pedir un número, mostrar los números desde n hasta 0.
+  
+  const $form24 =document.getElementById('form24');
+  const alertPlaceholder24 = document.getElementById('liveAlertPlaceholder24');
 
-     
+  $form24.addEventListener('submit', (e) => {
+      e.preventDefault();
+      desdeNhasta0();
+  })
+  const desdeNhasta0 = () => {
+    const numero24 = parseInt($form24.nmr0.value);
+  
+    for (let i = numero24; i > -1; i--) {
+        alert24(`${i}`)
+    }
+    
+  };
+  const alert24 = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder24.append(wrapper)
 
-
-
-
-
-
+};
+  
