@@ -423,19 +423,19 @@ $form14.addEventListener('submit', (e) => {
 function esPrimo() {
     const nmr14 = parseInt($form14.nmrprimo.value);
     if (nmr14 < 2) {
-        alert14('error, debes ingresar un numero mayor que 1')
+        alert14(`Error, debes ingresar un numero mayor que 1`,'danger')
         return
     }
-    const contador = 0;
+    let contador = 0;
     for (let i = 1; i <= nmr14; i++) {
         if (nmr14 % i === 0) {
             contador++;
         }
     }
     if (contador === 2) {
-        alert14(`el numero ${nmr14} es primo`);
+        alert14(`el numero ${nmr14} es primo`,'info');
     }else{
-        alert14(`el numero ${nmr14}, no es primo`);
+        alert14(`el numero ${nmr14}, no es primo`,'info');
     }
  }
  
@@ -468,8 +468,8 @@ $form15.addEventListener('submit', (e) => {
 const sumaDeDosNumeros = ()=> {
     const numero1 = parseInt($form15.numero15.value);
     const numero2 = parseInt($form15.nmr15.value);
-    alert15(` ${numero1} + ${numero2} = ${numero1 + numero2}`, 'warning');
-    alert15(` ${numero1} - ${numero2} = ${numero1 - numero2}`, 'danger');
+    alert15(`La suma es:  ${numero1} + ${numero2} = ${numero1 + numero2}`, 'warning');
+    alert15(`La resta es: ${numero1} - ${numero2} = ${numero1 - numero2}`, 'danger');
 }
 
 const alert15 = (message, type) => {
@@ -538,7 +538,7 @@ function elResto() {
     const nmr17 = parseInt($form17.restoDivision1.value);
     const nmrr17 = parseInt($form17.restoDivision2.value);
     const r17 = nmr17 % nmrr17;
-    alert17(` El resto es ${r17 }`,'successs')
+    alert17(` El resto es ${r17 }`,'success')
 }
 
 
@@ -574,7 +574,7 @@ function Divisible() {
     const nmrr18 = parseInt($form18.Divisible2.value);
     const r17 = nmr18 % nmrr18;
     if (nmr18 === nmr18) {
-        alert18(`Si es divisible el Resultado es, ${nmr18 / nmrr18}`);
+        alert18(`Si es divisible el Resultado es, ${nmr18 / nmrr18}`,'dark');
     } else{
         alert18('no se encontraron resultados.')
     }
@@ -600,19 +600,6 @@ const alert18 = (message, type) => {
 // 19. Pedir dos números y el nombre de una operación, mostrar el resultado.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
 const $form19 = document.getElementById('form19');
 const alertPlaceholder19 = document.getElementById('liveAlertPlaceholder19');
 
@@ -624,7 +611,7 @@ $form19.addEventListener('submit', (e) => {
 const resultado = () => {
     const numero19 = parseInt($form19.operacion1.value);
     const numeroo19 = parseInt($form19.operacion2.value);
-    const nOperacion = ($form19.operacion3.value );
+    let nOperacion = ($form19.operacion3.value );
     switch (nOperacion) {
         case 'sumar':
           alert19(`${numero19} + ${numeroo19} = ${numero19 + numeroo19}`);
@@ -660,6 +647,7 @@ const alert19 = (message, type) => {
 
 
 // 20. Pedir un número, mostrar la suma total desde 1 hasta n.
+
   const $form20 =document.getElementById('form20');
   const alertPlaceholder20 = document.getElementById('liveAlertPlaceholder20');
 
@@ -679,7 +667,7 @@ const alert19 = (message, type) => {
     }
   
   
-    alert20('La suma total es: ' + resultado20);
+    alert20('La suma total es: ' + resultado20, 'primary');
   }
   
   
@@ -715,7 +703,7 @@ function sumaPares() {
         }
 
     }
-    alert21('la suma de los pares es '  +  resultado21);
+    alert21('la suma de los pares es '  +  resultado21,'danger');
 }
 const alert21 = (message, type) => {
     const wrapper = document.createElement('div')
@@ -752,7 +740,7 @@ function sumaImpares() {
       }
     }
   
-    alert22('La suma total de los impares es: ' + resultado22);
+    alert22(`La suma total de los impares es:  ${resultado22}`,'warning');
     }
 
 
@@ -788,7 +776,7 @@ function multiplosDe3() {
       }
       i++;
     }
-    alert23(`${i}`)
+    alert23(`${i}`,'light')
   }
   const alert23 = (message, type) => {
     const wrapper = document.createElement('div')
@@ -816,9 +804,9 @@ function multiplosDe3() {
     const numero24 = parseInt($form24.nmr0.value);
   
     for (let i = numero24; i > -1; i--) {
-        alert24(`${i}`)
+      alert24(`${i}`)
     }
-    
+   
   };
   const alert24 = (message, type) => {
     const wrapper = document.createElement('div')
