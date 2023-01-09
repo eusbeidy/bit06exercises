@@ -611,7 +611,7 @@ $form19.addEventListener('submit', (e) => {
 const resultado = () => {
     const numero19 = parseInt($form19.operacion1.value);
     const numeroo19 = parseInt($form19.operacion2.value);
-    let nOperacion = ($form19.operacion3.value );
+    let nOperacion = $form19.operacion3.value ;
     switch (nOperacion) {
         case 'sumar':
           alert19(`${numero19} + ${numeroo19} = ${numero19 + numeroo19}`);
