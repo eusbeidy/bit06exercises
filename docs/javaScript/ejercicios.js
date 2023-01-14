@@ -34,9 +34,12 @@ function mayordeedad() {
   const $edad = document.getElementById('edad').value;
   if ($edad >= 18) {
     alert2('Eres mayor de edad',  'success');
-} else {
+} else if($edad <= 18){
     alert2('Upss NO eres mayor de edad',  'success');
   
+} else {
+  alert2('Debes ingresar tu edad')
+
 }
 }
 const alert2 = (message, type) => {

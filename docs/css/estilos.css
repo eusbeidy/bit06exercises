@@ -5,10 +5,15 @@
     border: 3px solid rgb(176, 176, 226);
     border-radius: 6px;
 }
-h1{
-    font-size: 2rem;
+h5{
+    font-size: 1rem;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+i{
+    text-align: center;
+    font-size: 2rem;
+    color: blue;
 }
 
 /*estilos para los ejercicios.*/
