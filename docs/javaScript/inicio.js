@@ -40,7 +40,7 @@ function checkPermitido(obj) {
         accept: true
     };
     if (obj.username === permitido.username && parseInt(obj.password) === permitido.password && obj.accept === permitido.accept) {
-        window.open('http://127.0.0.1:5500/docs/ejercicios.html', '_self');
+        window.open('http://127.0.0.1:5502/docs/ejercicios.html', '_self');
     } else {
         alert('Acceso Denegado, el Usuario no es permitido', 'warning');
     }
