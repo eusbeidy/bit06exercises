@@ -35,7 +35,7 @@ function esValidoForm() {
 }
 function checkPermitido(obj) {
     const permitido = {
-        username: 'Bit',
+        username: 'bit',
         password: 2023,
         accept: true
     };
